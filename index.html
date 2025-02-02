@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio- Web Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url(bg.avif);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 300;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #d2042d; 
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15% 10%;
+            height: 100vh;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .about-me-btn {
+            background-color: #6D0000;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .about-me-btn.clicked {
+            background-color: #ffffff; /* Change to white on click */
+        }
+
+        .about-me-btn i {
+            margin-left: 10px;
+        }
+
+        .dark-red {
+            color: #8B0000; /* Dark Red color */
+        }
+
+        /* Social Media Links */
+        .social-links {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #6D0000;
+        }
+
+        /* Resume Download */
+        .resume-download {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* Feel free to keep the button styles consistent */
+        .resume-download button {
+            background-color: #6D0000;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .resume-download button:hover {
+            background-color: #d2042d; /* Change color on hover */
+        }
+
+        /* Dark/Light Mode */
+        body.light-mode {
+            background-color: #fff;
+            color: #000;
+        }
+
+        body.light-mode nav {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        body.light-mode .nav-links a {
+            color: #000;
+        }
+
+        body.light-mode .nav-links a:hover,
+        body.light-mode .nav-links a.active {
+            color: #6D0000;
+        }
+
+        body.light-mode .theme-toggle {
+            color: #000;
+        }
+
+        body.light-mode .hero {
+            background: transparent;
+        }
+
+        body.light-mode .about-me-btn,
+        body.light-mode .resume-download button {
+            background-color: #d2042d;
+            color: #fff;
+        }
+
+        body.light-mode .social-links a,
+        body.light-mode .resume-download a {
+            color: #000;
+        }
+
+        body.light-mode .social-links a:hover,
+        body.light-mode .resume-download a:hover {
+            color: #d2042d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            WebDev☕︎
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="theme-toggle">
+            <i class="fas fa-moon" id="theme-icon"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="dark-red">Inass</span>!</h1>
+            <p>A passionate web developer creating modern and responsive websites.</p>
+            <button class="about-me-btn" onclick="location.href='aboutme.html'">
+                About Me <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Social Media Links -->
+    <div class="social-links">
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+    <!-- Resume Download -->
+    <div class="resume-download">
+        <button class="about-me-btn" onclick="location.href='resume.html'">
+            <i class="fas fa-download"></i> View Resume
+        </button>
+    </div>
+
+    <script>
+        // Dark/Light Mode Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+        const aboutMeBtn = document.querySelector('.about-me-btn');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+
+        // Change button color on click
+        aboutMeBtn.addEventListener('click', () => {
+            aboutMeBtn.classList.toggle('clicked');
+        });
+
+        // Navigation Active Link
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                navLinks.forEach(link => link.classList.remove('active'));
+                e.target.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

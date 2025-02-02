@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Inass Aghil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+            background-image: url('bg.avif');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px); /* Glass-morphism effect */
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 300;
+            color: #fff;
+            letter-spacing: 1px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1); /* Hover effect */
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px; /* Increased gap for better spacing */
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); /* Center the nav links */
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #d2042d;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d2042d;
+            transform: translateY(-3px); /* Hover lift effect */
+        }
+
+        .nav-links a:hover::after {
+            width: 100%; /* Underline effect on hover */
+        }
+
+        /* About Me Section */
+        .about-section {
+            padding: 150px 10% 100px; /* Adjusted padding for better spacing */
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 48px;
+            margin-bottom: 40px;
+            font-weight: 300;
+            animation: fadeIn 1.5s ease-in-out; /* Fade-in animation */
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .profile-picture {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%; /* Round shape */
+            overflow: hidden;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.1); /* Hover effect */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        }
+
+        .about-text {
+            max-width: 600px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            backdrop-filter: blur(5px); /* Glass-morphism effect */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .about-text:hover {
+            transform: translateY(-10px); /* Lift effect on hover */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        }
+
+        .about-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile-picture, .about-text {
+            animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            WebDev☕︎
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            
+        </ul>
+    </nav>
+
+    <!-- About Me Section -->
+    <section class="about-section">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <!-- Profile Picture -->
+            <div class="profile-picture">
+                <img src="mee.jpg" alt="Inass Aghil">
+            </div>
+
+            <!-- About Text -->
+            <div class="about-text">
+                <h3>Hi, I'm Inass Aghil</h3>
+                <p>
+                    I'm a 22-year-old full-stack web developer from Rabat, Morocco. I recently graduated with honors in Computer Science from Vitebsk State University (VSU) named after Masherov in Belarus. My journey in tech began with a passion for problem-solving and creativity, which led me to specialize in web development.
+                </p>
+                <p>
+                    Over the years, I've worked on a variety of projects, from building responsive websites to developing robust backend systems. I've also had the opportunity to intern at some incredible companies, where I gained hands-on experience and honed my skills in both frontend and backend technologies.
+                </p>
+                <p>
+                    What drives me is the ability to create meaningful and user-friendly digital experiences. I love turning ideas into reality through code and continuously learning new technologies to stay ahead in this ever-evolving field. When I'm not coding, you can find me exploring new design trends, contributing to open-source projects, or enjoying a cup of coffee while brainstorming my next big idea.
+                </p>
+                <p>
+                    I'm excited to bring my skills and passion to new challenges and collaborations. Let's build something amazing together!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">⬆️ Back to Top</button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
