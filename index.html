@@ -75,6 +75,24 @@
             color: #fff;
         }
 
+        /* Chatbot Icon */
+        .chat-container {
+            position: absolute;
+            top: 20px;  /* Adjust according to your header height */
+            right: 30px; /* Space from the right */
+            cursor: pointer;
+        }
+
+        .chat-container a {
+            color: #fff;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .chat-container a:hover {
+            color: #d2042d;
+        }
+
         /* Hero Section */
         .hero {
             display: flex;
@@ -221,6 +239,11 @@
         <div class="theme-toggle">
             <i class="fas fa-moon" id="theme-icon"></i>
         </div>
+        <div class="chat-container">
+            <a href="chatbot.html" class="chat-btn">
+                <i class="fas fa-comments" id="chat-icon"></i>
+            </a>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -253,7 +276,6 @@
         const themeToggle = document.querySelector('.theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const body = document.body;
-        const aboutMeBtn = document.querySelector('.about-me-btn');
 
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('light-mode');
@@ -266,14 +288,8 @@
             }
         });
 
-        // Change button color on click
-        aboutMeBtn.addEventListener('click', () => {
-            aboutMeBtn.classList.toggle('clicked');
-        });
-
         // Navigation Active Link
         const navLinks = document.querySelectorAll('.nav-links a');
-
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 navLinks.forEach(link => link.classList.remove('active'));
